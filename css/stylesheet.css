@@ -146,6 +146,7 @@ section {
     color: white;
     border: 1px solid var(--border-glass);
     backdrop-filter: var(--glass-blur);
+
 }
 
 .btn-secondary:hover {
@@ -580,6 +581,9 @@ footer {
 }
 
 /* --- SEPARATE PLESKHOLDER BLOG PAGE SYSTEM --- */
+.fa-arrow-left {
+    margin-top: 22px;
+}
 .page { display: none; }
 .page.active-page { display: block; }
 
