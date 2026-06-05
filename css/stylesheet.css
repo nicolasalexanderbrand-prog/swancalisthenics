@@ -87,13 +87,21 @@ body {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: white; /* Explizit auf Weiß gesetzt */
+    z-index: 1001; /* Über der Navigation */
 }
 
 /* --- GLOBAL BENEFITS / LAYOUT --- */
 section {
-    padding: 80px 20px;
+    padding: 40px 20px; /* Kleinerer Abstand auf Mobile */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 80px 20px; /* Originaler Abstand auf Desktop */
+    }
 }
 
 .section-title {
@@ -258,6 +266,89 @@ section {
 
 @media (min-width: 768px) {
     .about-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- CONTACT PERSONS SECTION --- */
+.contact-persons-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: -20px auto 40px auto;
+    color: var(--text-gray);
+}
+
+.contact-persons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.contact-person-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: var(--glass-blur);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-person-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-person-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.contact-person-info {
+    padding: 25px;
+}
+
+.contact-person-info h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.contact-person-info p {
+    color: var(--accent-red);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.contact-person-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-person-social:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .contact-persons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        margin: 0 auto;
+    }
 }
 
 /* --- TEAM --- */
