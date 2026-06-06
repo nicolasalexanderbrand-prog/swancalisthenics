@@ -17,6 +17,9 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
 }
+.redspan {
+    color: var(--accent-red);
+}
 
 body {
     background-color: var(--bg-dark);
@@ -192,8 +195,8 @@ section {
 .hero-logo {
     max-width: 140px;
     height: auto;
-    margin-bottom: -60px;
-    margin-top: -100px;
+    margin-bottom: -30px;
+    margin-top: -80px;
     filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
 }
 
@@ -653,7 +656,17 @@ footer {
 
 /* --- MOBILE MENU OVERLAY --- */
 @media (max-width: 767px) {
-    .menu-toggle { display: block; }
+    .nav-container {
+        padding: 15px 10px;
+    }
+    .nav-logo {
+        gap: 6px;
+        font-size: 1rem; /* Schriftgröße verkleinert (Lösung 2) */
+    }
+    .menu-toggle { 
+        display: block; 
+        flex-shrink: 0;
+    }
     .nav-menu {
         position: fixed;
         top: 66px;
